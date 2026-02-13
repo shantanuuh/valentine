@@ -11,7 +11,7 @@ createFloating();
 
 /* Build progress dots */
 function buildProgressDots() {
-  progressDots.innerHTML = "";   // ✅ Prevent duplication
+  progressDots.innerHTML = "";
 
   for (let i = 0; i < totalDays; i++) {
     const dot = document.createElement('span');
@@ -39,15 +39,13 @@ function goToDay(day) {
   const currentPage = document.getElementById(`day-${currentDay}`);
   const nextPage = document.getElementById(`day-${day}`);
 
-  if (!currentPage || !nextPage) return; // ✅ Safety
+  if (!currentPage || !nextPage) return;
 
   currentPage.classList.remove('active');
   currentDay = day;
   nextPage.classList.add('active');
 
   updateDots();
-
-  /* ✅ Prevent scroll anchoring / viewport twitch */
   nextPage.scrollTo(0, 0);
 }
 
@@ -78,14 +76,11 @@ function openMemory(button) {
   const card = button.closest('.card');
   const content = card?.querySelector('.locked-content');
 
-  if (!card || !content) return; // ✅ Safety
+  if (!card || !content) return;
 
-  /* Reveal smoothly */
   content.classList.add('revealed');
-
   button.dataset.unlocked = 'true';
 
-  /* ✅ Fade text BEFORE swapping */
   button.classList.add("btn-fade");
 
   setTimeout(() => {
@@ -95,7 +90,6 @@ function openMemory(button) {
 
   button.classList.remove('open-btn');
   button.classList.add('primary');
-
   button.onclick = () => nextDay();
 
   confettiBurst();
@@ -132,19 +126,12 @@ function createFloating() {
         el.style.height = size + 'px';
       } else {
         el.textContent = '💮';
-        const size = 18 + Math.floor(Math.random() * 22);
-        el.style.fontSize = size + 'px';
+        el.style.fontSize = (18 + Math.random() * 22) + 'px';
       }
 
       el.style.left = Math.random() * 100 + '%';
-
-      const duration = 15 + Math.random() * 10;
-      el.style.animationDuration = duration + 's';
+      el.style.animationDuration = (15 + Math.random() * 10) + 's';
       el.style.animationDelay = Math.random() * 8 + 's';
-
-      if (shape === 'heart') {
-        el.style.transform = `rotate(${Math.random() * 360}deg)`;
-      }
 
       bg.appendChild(el);
     }
@@ -165,7 +152,6 @@ function confettiBurst() {
     c.style.left = Math.random() * 100 + 'vw';
     c.style.top = '40vh';
     c.style.zIndex = '999';
-    c.style.willChange = 'transform';
 
     const size = 8 + Math.floor(Math.random() * 16);
     const color = colors[Math.floor(Math.random() * colors.length)];
@@ -178,11 +164,9 @@ function confettiBurst() {
     } else if (type === 'heart') {
       c.textContent = '❤️';
       c.style.fontSize = size + 'px';
-      c.style.color = color;
     } else {
       c.textContent = '💮';
       c.style.fontSize = size + 'px';
-      c.style.color = color;
     }
 
     document.body.appendChild(c);
@@ -192,11 +176,11 @@ function confettiBurst() {
     const xOffset = (Math.random() - 0.5) * 100;
 
     c.animate([
-      { transform: `translate(0, 0) rotate(0deg) scale(1)`, opacity: 1 },
-      { transform: `translate(${xOffset}px, 300px) rotate(${rotation}deg) scale(0.5)`, opacity: 0 }
+      { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+      { transform: `translate(${xOffset}px, 300px) rotate(${rotation}deg)`, opacity: 0 }
     ], {
       duration: duration,
-      easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+      easing: 'ease-out',
       fill: 'forwards'
     });
 
@@ -207,7 +191,7 @@ function confettiBurst() {
 /* WhatsApp */
 function sendLove() {
   const phone = '918879528437';
-  const message = encodeURIComponent('Hey… I just finished something that made me smile ❤️');
+  const message = encodeURIComponent('');
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 
