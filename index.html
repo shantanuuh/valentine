@@ -30,7 +30,7 @@
     <div class="hero-card">
       <h1>Dear Niyati</h1>
       <p>This isn’t a big gesture…<br>just something tiny</p>
-      <p>Something made out of a thought,<br>a feeling,<br>and maybe… a little courage</p>
+      <p>Something made out of a thought,<br>a feeling, and maybe…<br><span class = "emphasis">a little courage</span></p>
       <button class="nav-btn primary" onclick="enterExperience()">Begin the Week</button>
     </div>
   </div>
@@ -75,9 +75,10 @@
         <img src="images/chocolateday.png" alt="Chocolate Day">
       </div>
       <div class="locked-content">
-        <h3>The Sweetest Thing</h3>
-        <p>Chocolate melts.</p>
-        <p class="emphasis">But you linger.</p>
+        <h3>A Little Sweetness</h3>
+        <p>Chocolate is meant to be savoured slowly.</p>
+        <p>Soft, rich, comforting…</p>
+        <p class="emphasis">Much like certain moments with you.</p>
       </div>
       <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
     </div>
@@ -92,7 +93,8 @@
       </div>
       <div class="locked-content">
         <h3>If Comfort Had a Shape</h3>
-        <p class="emphasis">It would say — “I’m here.”</p>
+        
+        <p>Not loud, not demanding, just softly saying <span class="emphasis"> “I’m here.” ♥️ </span></p>
       </div>
       <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
     </div>
@@ -107,7 +109,8 @@
       </div>
       <div class="locked-content">
         <h3>Not Empty Promises</h3>
-        <p class="emphasis">I promise presence.</p>
+        <p>No exaggerated vows.<br>
+        Just something real<br><span class="emphasis">I promise presence.</span></p>
       </div>
       <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
     </div>
@@ -122,7 +125,7 @@
       </div>
       <div class="locked-content">
         <h3>A Quiet Wish</h3>
-        <p class="emphasis">To hold you and pause the world.</p>
+        <p class="emphasis">To hold you close, and pause the world.</p>
       </div>
       <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
     </div>
@@ -137,7 +140,7 @@
       </div>
       <div class="locked-content">
         <h3>Someday, Maybe</h3>
-        <p class="emphasis">Unforgettable.</p>
+        <p class="emphasis">Not rushed,  just unforgettable when it happens.</p>
       </div>
       <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
     </div>
@@ -154,29 +157,38 @@
 
       <h2>Dear Niyati</h2>
 
-<p>Just something from me…</p>
+<p class="final-intro">Just something from me…</p>
 
 <p>I wanted this to make you smile.</p>
 
-<p class="final-line">
+<p class="final-emotion">
   I just wanted to make you feel a little special ♥️
 </p>
 
-<p>
+<p class="final-transition">
   And maybe ask you something small…
 </p>
 
-<h3 class="valentine-question">
+<h3 class="final-question">
   Would you be my Valentine? ♥️
 </h3>
 
-<p class="final-subtext">
+<p class="final-wish">
+  Happy Valentine’s Day 💗
+</p>
+
+<p class="final-feeling">
   Let me know what you feel
 </p>
 
+<button class="nav-btn secondary final-btn" onclick="sendLove()">
+  Send me a thought 💌
+</button>
 
-      <button class="nav-btn secondary" onclick="sendLove()">Send me a thought 💌</button>
-      <button class="exit-btn" onclick="exitExperience()">Exit Gently 🌸</button>
+<button class="exit-btn final-exit" onclick="exitExperience()">
+  Exit Gently 🌸
+</button>
+
     </div>
   </div>
 

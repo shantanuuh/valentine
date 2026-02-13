@@ -156,9 +156,10 @@ p {
 }
 
 .emphasis {
-  color: var(--hot-pink);
-  font-weight: 600;
-  font-size: 1.2rem;
+   font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0.7rem 0;
+  color: var(--soft-red);
 }
 
 .final-line {
@@ -166,6 +167,107 @@ p {
   font-weight: 500;
   margin-top: 1rem;
   color: var(--soft-red);
+}
+
+/* 💌 FINAL PAGE EXCLUSIVE STYLING */
+
+.final {
+  animation: finalFade 0.7s ease;
+}
+
+/* Soft entrance */
+@keyframes finalFade {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Subtle intro line */
+.final-intro {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-top: 0.2rem;
+  letter-spacing: 0.3px;
+}
+
+/* Emotional highlight text */
+.final-emotion {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0.7rem 0;
+  color: var(--soft-red);
+}
+
+/* Transition line */
+.final-transition {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-top: 0.4rem;
+}
+
+/* Valentine question (main visual focus) */
+.final-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin: 0.9rem 0 0.6rem;
+  color: var(--hot-pink);
+  animation: questionGlow 2.4s ease-in-out infinite alternate;
+}
+
+/* Premium glow animation */
+@keyframes questionGlow {
+  from { text-shadow: 0 0 6px rgba(255, 46, 99, 0.15); }
+  to   { text-shadow: 0 0 22px rgba(255, 46, 99, 0.45); }
+}
+
+/* Valentine wish */
+.final-wish {
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  color: var(--dark);
+  opacity: 0.85;
+}
+
+/* Feeling line */
+.final-feeling {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  margin-bottom: 0.8rem;
+}
+
+/* Final button refinement */
+.final-btn {
+  margin-top: 0.4rem;
+}
+
+/* Softer exit button */
+.final-exit {
+  margin-top: 0.4rem;
+  opacity: 0.6;
+}
+
+/* 📱 Mobile Premium Scaling */
+@media (max-width: 500px) {
+
+  .final-intro {
+    font-size: 0.82rem;
+  }
+
+  .final-emotion {
+    font-size: 1rem;
+  }
+
+  .final-transition {
+    font-size: 0.88rem;
+  }
+
+  .final-question {
+    font-size: 1.15rem;
+  }
+
+  .final-wish,
+  .final-feeling {
+    font-size: 0.82rem;
+  }
 }
 
 /* Images */
