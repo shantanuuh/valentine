@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Niyati</title>
+  <link rel="icon" href="favicon.ico">
+
+
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Floating Background -->
+  <div id="floating-bg"></div>
+
+  <!-- Music -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-player">
+    <button id="music-btn" onclick="toggleMusic()">▶</button>
+  </div>
+
+  <!-- Day 0 -->
+  <div class="page active" id="day-0">
+    <div class="hero-card">
+      <h1>Dear Niyati</h1>
+      <p>This isn’t a big gesture…<br>just something tiny</p>
+      <p>Something made out of a thought,<br>a feeling,<br>and maybe… a little courage</p>
+      <button class="nav-btn primary" onclick="enterExperience()">Begin the Week</button>
+    </div>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="page" id="day-1">
+    <div class="card">
+      <h2>Rose Day</h2>
+      <div class="memory-image">
+        <img src="images/Roseday.png" alt="Rose Day">
+      </div>
+      <div class="locked-content">
+        <h3>A Bouquet of Roses</h3>
+        <p>A bouquet of roses is never merely flowers.</p>
+        <p class="emphasis">It is a quiet expression of warmth and admiration.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="page" id="day-2">
+    <div class="card">
+      <h2>Propose Day</h2>
+      <div class="memory-image">
+        <img src="images/Proposeday.jpg" alt="Propose Day">
+      </div>
+      <div class="locked-content">
+        <h3>No Grand Speech</h3>
+        <p>Love doesn’t always arrive loudly.</p>
+        <p class="emphasis">Sometimes it whispers.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="page" id="day-3">
+    <div class="card">
+      <h2>Chocolate Day</h2>
+      <div class="memory-image">
+        <img src="images/chocolateday.png" alt="Chocolate Day">
+      </div>
+      <div class="locked-content">
+        <h3>The Sweetest Thing</h3>
+        <p>Chocolate melts.</p>
+        <p class="emphasis">But you linger.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="page" id="day-4">
+    <div class="card">
+      <h2>Teddy Day</h2>
+      <div class="memory-image">
+        <img src="images/pocoyo.png" alt="Teddy Day">
+      </div>
+      <div class="locked-content">
+        <h3>If Comfort Had a Shape</h3>
+        <p class="emphasis">It would say — “I’m here.”</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="page" id="day-5">
+    <div class="card">
+      <h2>Promise Day</h2>
+      <div class="memory-image">
+        <img src="images/promiseday.png" alt="Promise Day">
+      </div>
+      <div class="locked-content">
+        <h3>Not Empty Promises</h3>
+        <p class="emphasis">I promise presence.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="page" id="day-6">
+    <div class="card">
+      <h2>Hug Day</h2>
+      <div class="memory-image">
+        <img src="images/hugday.png" alt="Hug Day">
+      </div>
+      <div class="locked-content">
+        <h3>A Quiet Wish</h3>
+        <p class="emphasis">To hold you and pause the world.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="page" id="day-7">
+    <div class="card">
+      <h2>Kiss Day</h2>
+      <div class="memory-image">
+        <img src="images/kissday1.jpg" alt="Kiss Day">
+      </div>
+      <div class="locked-content">
+        <h3>Someday, Maybe</h3>
+        <p class="emphasis">Unforgettable.</p>
+      </div>
+      <button class="nav-btn open-btn" onclick="openMemory(this)">Open Your Gift</button>
+    </div>
+  </div>
+
+  <!-- Day 8 – Final -->
+  <div class="page" id="day-8">
+    <div class="card final">
+      <h2>Valentine’s Day</h2>
+      <div class="memory-image">
+        <img src="images/kissday2.png" alt="Valentine’s Day">
+      </div>
+
+      <h3>The Only Truth</h3>
+      <p>Across days…</p>
+      <p class="emphasis">You.</p>
+
+      <!-- ✅ FIXED INVALID HTML (no h2 inside p) -->
+      <p class="final-line">Happy Valentine’s Day ♥️</p>
+      <h2>Dear Niyati</h2>
+
+      <button class="nav-btn secondary" onclick="sendLove()">Send Me a Thought 💌</button>
+      <button class="exit-btn" onclick="exitExperience()">Exit Gently 🌸</button>
+    </div>
+  </div>
+
+  <!-- Progress Dots -->
+  <div class="progress-dots" id="progressDots"></div>
+
+  <!-- Exit Overlay -->
+  <div id="exitOverlay" class="exit-overlay hidden">
+    <div class="exit-card">
+      <h2>Thank You</h2>
+      <button class="nav-btn primary" onclick="restartExperience()">Start Over</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
